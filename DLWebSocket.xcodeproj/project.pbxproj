@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8188CB9F1B42BA91003AAEA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188CB9E1B42BA91003AAEA7 /* Foundation.framework */; };
+		8188CBA11B42BA91003AAEA7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188CBA01B42BA91003AAEA7 /* CoreGraphics.framework */; };
+		8188CBA31B42BA91003AAEA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188CBA21B42BA91003AAEA7 /* UIKit.framework */; };
+		8188CBA91B42BA91003AAEA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8188CBA71B42BA91003AAEA7 /* InfoPlist.strings */; };
+		8188CBAB1B42BA91003AAEA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188CBAA1B42BA91003AAEA7 /* main.m */; };
+		8188CBAF1B42BA91003AAEA7 /* DLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188CBAE1B42BA91003AAEA7 /* DLAppDelegate.m */; };
+		8188CBB11B42BA91003AAEA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8188CBB01B42BA91003AAEA7 /* Images.xcassets */; };
+		8188CBB81B42BA91003AAEA7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188CBB71B42BA91003AAEA7 /* XCTest.framework */; };
+		8188CBB91B42BA91003AAEA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188CB9E1B42BA91003AAEA7 /* Foundation.framework */; };
+		8188CBBA1B42BA91003AAEA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188CBA21B42BA91003AAEA7 /* UIKit.framework */; };
+		8188CBC21B42BA91003AAEA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8188CBC01B42BA91003AAEA7 /* InfoPlist.strings */; };
+		8188CBC41B42BA91003AAEA7 /* DLWebSocketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188CBC31B42BA91003AAEA7 /* DLWebSocketTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8188CBBB1B42BA91003AAEA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8188CB931B42BA91003AAEA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8188CB9A1B42BA91003AAEA7;
+			remoteInfo = DLWebSocket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8188CB9B1B42BA91003AAEA7 /* DLWebSocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DLWebSocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8188CB9E1B42BA91003AAEA7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8188CBA01B42BA91003AAEA7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8188CBA21B42BA91003AAEA7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8188CBA61B42BA91003AAEA7 /* DLWebSocket-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DLWebSocket-Info.plist"; sourceTree = "<group>"; };
+		8188CBA81B42BA91003AAEA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8188CBAA1B42BA91003AAEA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8188CBAC1B42BA91003AAEA7 /* DLWebSocket-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DLWebSocket-Prefix.pch"; sourceTree = "<group>"; };
+		8188CBAD1B42BA91003AAEA7 /* DLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLAppDelegate.h; sourceTree = "<group>"; };
+		8188CBAE1B42BA91003AAEA7 /* DLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLAppDelegate.m; sourceTree = "<group>"; };
+		8188CBB01B42BA91003AAEA7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8188CBB61B42BA91003AAEA7 /* DLWebSocketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DLWebSocketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8188CBB71B42BA91003AAEA7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8188CBBF1B42BA91003AAEA7 /* DLWebSocketTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DLWebSocketTests-Info.plist"; sourceTree = "<group>"; };
+		8188CBC11B42BA91003AAEA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8188CBC31B42BA91003AAEA7 /* DLWebSocketTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLWebSocketTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8188CB981B42BA91003AAEA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8188CBA11B42BA91003AAEA7 /* CoreGraphics.framework in Frameworks */,
+				8188CBA31B42BA91003AAEA7 /* UIKit.framework in Frameworks */,
+				8188CB9F1B42BA91003AAEA7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8188CBB31B42BA91003AAEA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8188CBB81B42BA91003AAEA7 /* XCTest.framework in Frameworks */,
+				8188CBBA1B42BA91003AAEA7 /* UIKit.framework in Frameworks */,
+				8188CBB91B42BA91003AAEA7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8188CB921B42BA91003AAEA7 = {
+			isa = PBXGroup;
+			children = (
+				8188CBA41B42BA91003AAEA7 /* DLWebSocket */,
+				8188CBBD1B42BA91003AAEA7 /* DLWebSocketTests */,
+				8188CB9D1B42BA91003AAEA7 /* Frameworks */,
+				8188CB9C1B42BA91003AAEA7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8188CB9C1B42BA91003AAEA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8188CB9B1B42BA91003AAEA7 /* DLWebSocket.app */,
+				8188CBB61B42BA91003AAEA7 /* DLWebSocketTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8188CB9D1B42BA91003AAEA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8188CB9E1B42BA91003AAEA7 /* Foundation.framework */,
+				8188CBA01B42BA91003AAEA7 /* CoreGraphics.framework */,
+				8188CBA21B42BA91003AAEA7 /* UIKit.framework */,
+				8188CBB71B42BA91003AAEA7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8188CBA41B42BA91003AAEA7 /* DLWebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				8188CBAD1B42BA91003AAEA7 /* DLAppDelegate.h */,
+				8188CBAE1B42BA91003AAEA7 /* DLAppDelegate.m */,
+				8188CBB01B42BA91003AAEA7 /* Images.xcassets */,
+				8188CBA51B42BA91003AAEA7 /* Supporting Files */,
+			);
+			path = DLWebSocket;
+			sourceTree = "<group>";
+		};
+		8188CBA51B42BA91003AAEA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8188CBA61B42BA91003AAEA7 /* DLWebSocket-Info.plist */,
+				8188CBA71B42BA91003AAEA7 /* InfoPlist.strings */,
+				8188CBAA1B42BA91003AAEA7 /* main.m */,
+				8188CBAC1B42BA91003AAEA7 /* DLWebSocket-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8188CBBD1B42BA91003AAEA7 /* DLWebSocketTests */ = {
+			isa = PBXGroup;
+			children = (
+				8188CBC31B42BA91003AAEA7 /* DLWebSocketTests.m */,
+				8188CBBE1B42BA91003AAEA7 /* Supporting Files */,
+			);
+			path = DLWebSocketTests;
+			sourceTree = "<group>";
+		};
+		8188CBBE1B42BA91003AAEA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8188CBBF1B42BA91003AAEA7 /* DLWebSocketTests-Info.plist */,
+				8188CBC01B42BA91003AAEA7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8188CB9A1B42BA91003AAEA7 /* DLWebSocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8188CBC71B42BA91003AAEA7 /* Build configuration list for PBXNativeTarget "DLWebSocket" */;
+			buildPhases = (
+				8188CB971B42BA91003AAEA7 /* Sources */,
+				8188CB981B42BA91003AAEA7 /* Frameworks */,
+				8188CB991B42BA91003AAEA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DLWebSocket;
+			productName = DLWebSocket;
+			productReference = 8188CB9B1B42BA91003AAEA7 /* DLWebSocket.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8188CBB51B42BA91003AAEA7 /* DLWebSocketTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8188CBCA1B42BA91003AAEA7 /* Build configuration list for PBXNativeTarget "DLWebSocketTests" */;
+			buildPhases = (
+				8188CBB21B42BA91003AAEA7 /* Sources */,
+				8188CBB31B42BA91003AAEA7 /* Frameworks */,
+				8188CBB41B42BA91003AAEA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8188CBBC1B42BA91003AAEA7 /* PBXTargetDependency */,
+			);
+			name = DLWebSocketTests;
+			productName = DLWebSocketTests;
+			productReference = 8188CBB61B42BA91003AAEA7 /* DLWebSocketTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8188CB931B42BA91003AAEA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "杨德龙";
+				TargetAttributes = {
+					8188CBB51B42BA91003AAEA7 = {
+						TestTargetID = 8188CB9A1B42BA91003AAEA7;
+					};
+				};
+			};
+			buildConfigurationList = 8188CB961B42BA91003AAEA7 /* Build configuration list for PBXProject "DLWebSocket" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8188CB921B42BA91003AAEA7;
+			productRefGroup = 8188CB9C1B42BA91003AAEA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8188CB9A1B42BA91003AAEA7 /* DLWebSocket */,
+				8188CBB51B42BA91003AAEA7 /* DLWebSocketTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8188CB991B42BA91003AAEA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8188CBA91B42BA91003AAEA7 /* InfoPlist.strings in Resources */,
+				8188CBB11B42BA91003AAEA7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8188CBB41B42BA91003AAEA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8188CBC21B42BA91003AAEA7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8188CB971B42BA91003AAEA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8188CBAF1B42BA91003AAEA7 /* DLAppDelegate.m in Sources */,
+				8188CBAB1B42BA91003AAEA7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8188CBB21B42BA91003AAEA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8188CBC41B42BA91003AAEA7 /* DLWebSocketTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8188CBBC1B42BA91003AAEA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8188CB9A1B42BA91003AAEA7 /* DLWebSocket */;
+			targetProxy = 8188CBBB1B42BA91003AAEA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8188CBA71B42BA91003AAEA7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8188CBA81B42BA91003AAEA7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8188CBC01B42BA91003AAEA7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8188CBC11B42BA91003AAEA7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8188CBC51B42BA91003AAEA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8188CBC61B42BA91003AAEA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8188CBC81B42BA91003AAEA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DLWebSocket/DLWebSocket-Prefix.pch";
+				INFOPLIST_FILE = "DLWebSocket/DLWebSocket-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8188CBC91B42BA91003AAEA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DLWebSocket/DLWebSocket-Prefix.pch";
+				INFOPLIST_FILE = "DLWebSocket/DLWebSocket-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8188CBCB1B42BA91003AAEA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DLWebSocket.app/DLWebSocket";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DLWebSocket/DLWebSocket-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DLWebSocketTests/DLWebSocketTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8188CBCC1B42BA91003AAEA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DLWebSocket.app/DLWebSocket";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DLWebSocket/DLWebSocket-Prefix.pch";
+				INFOPLIST_FILE = "DLWebSocketTests/DLWebSocketTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8188CB961B42BA91003AAEA7 /* Build configuration list for PBXProject "DLWebSocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8188CBC51B42BA91003AAEA7 /* Debug */,
+				8188CBC61B42BA91003AAEA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8188CBC71B42BA91003AAEA7 /* Build configuration list for PBXNativeTarget "DLWebSocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8188CBC81B42BA91003AAEA7 /* Debug */,
+				8188CBC91B42BA91003AAEA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8188CBCA1B42BA91003AAEA7 /* Build configuration list for PBXNativeTarget "DLWebSocketTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8188CBCB1B42BA91003AAEA7 /* Debug */,
+				8188CBCC1B42BA91003AAEA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8188CB931B42BA91003AAEA7 /* Project object */;
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div>
+            <button id="btn">Send to ObjC</button>
+        </div>
+        <div id="log"></div>
+        
+        <script type='text/javascript'>
+            
+            var BD = null;
+            
+            function log(message, data) {
+                    var log = document.getElementById('log');
+                    var el = document.createElement('div');
+                    el.innerHTML = message;
+                    if (log.children.length) { log.insertBefore(el, log.children[0]); }
+                    else { log.appendChild(el); }
+            }
+            
+            function connectWebViewJavascriptBridge(callback) {
+                if (window.WebViewJavascriptBridge) {
+                    callback(WebViewJavascriptBridge);
+                } else {
+                    document.addEventListener('WebViewJavascriptBridgeReady', function() {
+                        callback(WebViewJavascriptBridge);
+                    }, false);
+                }
+                document.getElementById('btn').onclick = function(){
+                    if(BD){
+                        BD.send('msg from js: ' + Date.now(), function(responseData) {
+                                    log('send data')
+                                    });
+                    }
+                };
+            }
+        
+        
+        
+            connectWebViewJavascriptBridge(function(bridge) {
+                bridge.init(function(message, responseCallback) {
+                            log('aaa');
+                            log(message);
+                            receiveMsg(message);
+                });
+                bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {
+                                       log('bbb');
+                                       log(data);
+                                       receiveMsg(data);
+                                       if(responseCallback){
+                                            responseCallback(responseData);
+                                       }
+                });
+                BD = bridge;
+            });
+            
+            function receiveMsg(msg){
+                if(typeof(msg)=='string'){
+                    msg = JSON.parse(msg);
+                }
+                if(msg.c == 10000 && msg.host && msg.port && msg.token){
+                    log('GGG: ' + msg.token);
+                    SocketService.start(msg.host,msg.port,msg.token);
+                }else{
+                    SocketService.sendMessage(msg);
+                }
+            }
+        
+            var SocketService = {
+                SUPPORT: "MozWebSocket" in window ? 'MozWebSocket' : ("WebSocket" in window ? 'WebSocket' : null),
+                WS: null,
+                HOST: null,
+                PORT: null,
+                TOKEN: null,
+                _uniqueId: 0,
+                _notrecn: false,
+                start: function (host, port,token) {
+                    this.HOST = host;
+                    this.PORT=port;
+                    this.TOKEN = token;
+                    log('HHH: ' + this.TOKEN);
+                    try {
+                        if (this.SUPPORT) {
+                            log('1111');
+                            this.WS = new window[this.SUPPORT]((window.location.protocol == 'https:' ? 'wss' : 'ws') + '://' + this.HOST + ':' + this.PORT);
+                            this.WS.onopen = this.wsopen;
+                            this.WS.onclose = this.wsclose;
+                            this.WS.onmessage = this.onMsg;
+                        } else {
+                            log('not support socket');
+                        }
+                    } catch (ex) {
+                        log('socket throw exception: ' + ex.code + ' \r\n' + ex.message);
+                    }
+                },
+                wsopen: function () {
+                    log('WS OPEN');
+                    log('token: ' + SocketService.TOKEN);
+                    SocketService.sendMessage({action: 'login', from: 'mobile', token: SocketService.TOKEN});
+                    log('send the login message to server')
+                    if (!SocketService._timering) {
+                        SocketService._timering = true;
+                        var _socketTimer = function () {
+                            setTimeout(function () {
+                                if (SocketService.getState() == 1) {
+                                    log('send heat beat number 1')
+                                    SocketService.sendMessage(1);
+                                }
+                                _socketTimer();
+                            }, 15000);
+                        };
+                        _socketTimer();
+                    }
+                },
+                wsclose: function () {
+                    log('WS CLOSED');
+                    if (!SocketService._notrecn) {
+                        setTimeout(function () {
+                            SocketService.start();
+                        }, 3000);
+                    }
+                },
+                close: function () {
+                    log('WS CLOSED');
+                    if (SocketService.WS) {
+                        SocketService.WS.close();
+                    }
+                },
+                getState: function () {
+                    return this.WS.readyState;
+                },
+                sendMessage: function (msg) {
+                    if (this.WS) {
+                        if (msg) {
+                            this.WS.send(JSON.stringify(msg));
+                           
+                        }
+                    }
+                },
+                _onMsg: function (msg) {
+                    switch (msg.type || msg.action) {
+                        case 'LOGIN':
+                        {
+                            log('logined');
+                            log(msg.code);
+                            SocketService._notrecn = msg.code == '0x0005';
+                        }
+                            break;
+                        default:
+                            break;
+                    }
+                    if(msg.no){
+                        log('send status no back')
+                        this.WS.send(msg.no);
+                    }
+                    if(BD){
+                        
+                        BD.send(msg, function(responseData) {
+                             log('send data')
+                        });
+                    }
+
+                },
+                onMsg: function (evt) {
+                    log('onMsg');
+                    if (evt.data && evt.data.length > 0) {
+                        var _msg = JSON.parse(evt.data);
+                        SocketService._onMsg(_msg);
+                    }
+                }
+            };
+            
+            
+        </script>
+    </body>
+</html>

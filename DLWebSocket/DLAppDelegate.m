@@ -7,13 +7,17 @@
 //
 
 #import "DLAppDelegate.h"
+#import "DLRootViewController.h"
 
 @implementation DLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    DLRootViewController *rootViewController=[[DLRootViewController alloc]initWithNibName:@"DLRootViewController" bundle:nil];
+    UINavigationController *rootNavi=[[UINavigationController alloc]initWithRootViewController:rootViewController];
+    self.window.rootViewController=rootNavi;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

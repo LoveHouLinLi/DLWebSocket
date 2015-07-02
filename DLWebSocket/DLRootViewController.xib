@@ -6,6 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DLRootViewController">
             <connections>
+                <outlet property="loginBtn" destination="al8-MB-gEq" id="eh6-uh-aQd"/>
+                <outlet property="msgTextView" destination="Nch-bj-LBm" id="e0a-iy-vIQ"/>
+                <outlet property="portTextField" destination="Wai-e0-IFB" id="LH3-60-oeq"/>
+                <outlet property="tokenTextField" destination="kmE-fS-drf" id="TrJ-fs-py2"/>
+                <outlet property="urlTextField" destination="tID-nv-g3V" id="eHh-aP-w0x"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +18,76 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入url" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tID-nv-g3V">
+                    <rect key="frame" x="40" y="96" width="240" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZJQ-vl-vat"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入登录的端口号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wai-e0-IFB">
+                    <rect key="frame" x="40" y="161" width="240" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="tTB-jn-ir4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al8-MB-gEq">
+                    <rect key="frame" x="95" y="277" width="131" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="rhb-3b-1Kq"/>
+                    </constraints>
+                    <state key="normal" title="登录">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onLoginBtnClicked:" destination="-1" eventType="touchUpInside" id="f8J-aX-fsb"/>
+                    </connections>
+                </button>
+                <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="显示服务端返回的信息" translatesAutoresizingMaskIntoConstraints="NO" id="Nch-bj-LBm">
+                    <rect key="frame" x="40" y="342" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="wvg-J2-Iy2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入授权token" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kmE-fS-drf">
+                    <rect key="frame" x="40" y="217" width="240" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="jHq-n3-yYN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="tID-nv-g3V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="96" id="1JZ-5R-PDb"/>
+                <constraint firstAttribute="trailing" secondItem="Wai-e0-IFB" secondAttribute="trailing" constant="40" id="2c7-TT-Qzu"/>
+                <constraint firstItem="al8-MB-gEq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="95" id="70w-5M-Vqm"/>
+                <constraint firstItem="tID-nv-g3V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="8CN-Jg-SVV"/>
+                <constraint firstItem="al8-MB-gEq" firstAttribute="top" secondItem="kmE-fS-drf" secondAttribute="bottom" constant="30" id="FaH-jK-rNt"/>
+                <constraint firstAttribute="trailing" secondItem="al8-MB-gEq" secondAttribute="trailing" constant="94" id="J5v-rr-rVm"/>
+                <constraint firstAttribute="trailing" secondItem="tID-nv-g3V" secondAttribute="trailing" constant="40" id="Qs5-5U-hL4"/>
+                <constraint firstItem="Wai-e0-IFB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="S0e-pN-0M5"/>
+                <constraint firstAttribute="trailing" secondItem="Nch-bj-LBm" secondAttribute="trailing" constant="40" id="dLb-Ru-Zfd"/>
+                <constraint firstItem="Nch-bj-LBm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="fSy-np-3vD"/>
+                <constraint firstItem="kmE-fS-drf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="l2s-4M-xcf"/>
+                <constraint firstItem="kmE-fS-drf" firstAttribute="top" secondItem="Wai-e0-IFB" secondAttribute="bottom" constant="26" id="ntc-gZ-LV4"/>
+                <constraint firstItem="Nch-bj-LBm" firstAttribute="top" secondItem="al8-MB-gEq" secondAttribute="bottom" constant="35" id="sYb-nQ-jTR"/>
+                <constraint firstAttribute="trailing" secondItem="kmE-fS-drf" secondAttribute="trailing" constant="40" id="tiZ-Nh-pEB"/>
+                <constraint firstItem="Wai-e0-IFB" firstAttribute="top" secondItem="tID-nv-g3V" secondAttribute="bottom" constant="35" id="w4Z-mL-rsV"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

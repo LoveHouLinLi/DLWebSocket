@@ -37,6 +37,25 @@
 
 @property WebViewJavascriptBridge* bridge;  // OC和JS 交互的类
 
+
+@property (weak, nonatomic) IBOutlet UITextField *urlTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *portTextField;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *tokenTextField;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+
+
+- (IBAction)onLoginBtnClicked:(id)sender;
+
+
+@property (weak, nonatomic) IBOutlet UITextView *msgTextView;
+
+
+
 @end
 
 @implementation DLRootViewController
@@ -54,7 +73,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self webServiceConnectHost:HOST onPort:PORT withToken:@"123456"];
+   // [self webServiceConnectHost:HOST onPort:PORT withToken:@"123456"];
     
 }
 
@@ -75,11 +94,12 @@
         self.webView=[[UIWebView alloc]initWithFrame:CGRectMake(-100, -100, 100, 100)];
         [self.view addSubview:self.webView];
         
+        __weak typeof (self) weakSelf=self;
         [WebViewJavascriptBridge enableLogging];
         _bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback)
         {
             NSLog(@"received webSocket data  : %@", data);
-            [self webServiceDidReceivedPushedMessage:data];  // 收到服务端推送的消息时的回调方法
+            [weakSelf webServiceDidReceivedPushedMessage:data];  // 收到服务端推送的消息时的回调方法
             
         }];
         [self.webView loadHTMLString:appHtml baseURL:baseURL];
@@ -103,6 +123,8 @@
 - (void)webServiceDidReceivedPushedMessage:(id)message
 {
     NSLog(@"handle data");
+    self.msgTextView.text=[message description];
+    
 }
 
 - (void)webServiceDisConnect
@@ -113,6 +135,13 @@
         self.webView=nil;
         
     }
+}
+
+
+- (IBAction)onLoginBtnClicked:(id)sender
+{
+    [self webServiceConnectHost:self.urlTextField.text onPort:self.portTextField.text withToken:self.tokenTextField.text];
+    
 }
 
 
